@@ -261,7 +261,7 @@ def show_landing_page():
     **Discover which 'Peek' character you are by answering a series of fun scenarios!**
 
     - **Instructions**:
-        - You'll be presented with a series of scenarios.
+        - You will be presented with a series of scenarios.
         - Choose the option that best describes what you would do.
         - At the end, you'll find out which character matches your personality!
 
