@@ -115,42 +115,42 @@ character_outcomes = [
         "min_score": 10,
         "max_score": 19,
         "description": "You are cautious and prefer to avoid risks. You value security and stability.",
-        "image": "images/2.png"
+        "image": "2.png"
     },
     {
         "name": "PEEKachu",
         "min_score": 20,
         "max_score": 29,
         "description": "You are practical and prefer familiar experiences. Safety is your top priority.",
-        "image": "images/1.png"
+        "image": "1.png"
     },
     {
         "name": "SpongePEEK",
         "min_score": 30,
         "max_score": 39,
         "description": "You tend to go with the flow and enjoy following trends with your peers.",
-        "image": "images/5.png"
+        "image": "5.png"
     },
     {
         "name": "PEEKa Pig",
         "min_score": 40,
         "max_score": 49,
         "description": "You enjoy a balanced life with a mix of fun and practicality.",
-        "image": "images/3.png"
+        "image": "3.png"
     },
     {
         "name": "PEEKzilla",
         "min_score": 50,
         "max_score": 59,
         "description": "You are adventurous and love taking risks. Thrill and excitement drive you.",
-        "image": "images/4.png"
+        "image": "4.png"
     },
     {
         "name": "PEEK.E",
         "min_score": 60,
         "max_score": 70,
         "description": "You are informed and balanced, making decisions based on research and facts.",
-        "image": "images/6.png"
+        "image": "6.png"
     },
 ]
 
