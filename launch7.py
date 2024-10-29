@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 # Define the quiz data with scores
 quiz = [
@@ -108,53 +109,55 @@ quiz = [
 ]
 
 # Character outcomes based on total score
-# Define score ranges for each character
 character_outcomes = [
     {
         "name": "MoPEEKo",
         "min_score": 10,
         "max_score": 19,
         "description": "You are cautious and prefer to avoid risks. You value security and stability.",
-        "image": "2.png"
+        "image": "images/2.png"
     },
     {
         "name": "PEEKachu",
         "min_score": 20,
         "max_score": 29,
         "description": "You are practical and prefer familiar experiences. Safety is your top priority.",
-        "image": "1.png"
+        "image": "images/1.png"
     },
     {
         "name": "SpongePEEK",
         "min_score": 30,
         "max_score": 39,
         "description": "You tend to go with the flow and enjoy following trends with your peers.",
-        "image": "5.png"
+        "image": "images/5.png"
     },
     {
         "name": "PEEKa Pig",
         "min_score": 40,
         "max_score": 49,
         "description": "You enjoy a balanced life with a mix of fun and practicality.",
-        "image": "3.png"
+        "image": "images/3.png"
     },
     {
         "name": "PEEKzilla",
         "min_score": 50,
         "max_score": 59,
         "description": "You are adventurous and love taking risks. Thrill and excitement drive you.",
-        "image": "4.png"
+        "image": "images/4.png"
     },
     {
         "name": "PEEK.E",
         "min_score": 60,
         "max_score": 70,
         "description": "You are informed and balanced, making decisions based on research and facts.",
-        "image": "6.png"
+        "image": "images/6.png"
     },
 ]
 
 # Initialize Session State
+if 'quiz_started' not in st.session_state:
+    st.session_state.quiz_started = False
+
 if 'question_index' not in st.session_state:
     st.session_state.question_index = 0
     st.session_state.responses = [None] * len(quiz)
@@ -170,6 +173,7 @@ def previous_question():
     st.session_state.question_index -= 1
 
 def restart_quiz():
+    st.session_state.quiz_started = False
     st.session_state.question_index = 0
     st.session_state.responses = [None] * len(quiz)
     st.session_state.total_score = 0
@@ -196,7 +200,7 @@ def show_results():
             character = outcome
             break
     if character:
-        st.write(f"### {character['name']}")
+        st.write(f"### You are {character['name']}!")
         st.write(character['description'])
         if character['image']:
             st.image(character['image'], use_column_width=True)
@@ -244,6 +248,21 @@ def show_question():
     else:
         cols[2].button("Submit", on_click=show_results)
 
+def show_landing_page():
+    st.title("🌟 Welcome to the Peek Personality Quiz!")
+    st.image("Instagram Post design.png", use_column_width=True)
+    st.markdown("""
+    **Discover which 'Peek' character you are by answering a series of fun scenarios!**
+
+    - **Instructions**:
+        - You'll be presented with a series of scenarios.
+        - Choose the option that best describes what you would do.
+        - At the end, you'll find out which character matches your personality!
+
+    **Ready to begin?**
+    """)
+    if st.button("Start Quiz"):
+        st.session_state.quiz_started = True
 
 def main():
     # Custom CSS for Responsive Design
@@ -267,8 +286,12 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
-    st.title("🌟 What type of Peek are you?")
-    show_question()
+    if not st.session_state.quiz_started:
+        show_landing_page()
+    elif st.session_state.question_index < len(quiz):
+        show_question()
+    else:
+        show_results()
 
 if __name__ == "__main__":
     main()
