@@ -3,7 +3,7 @@ import streamlit as st
 # Define the quiz data with scores
 quiz = [
     {
-        "question": "Scenario 1: Heng! Ong! Huat Ah!\nYour family has just won the lottery of $5 million after the Toto draw has reached S$10 million! So many things that you can buy and do with the money! What would you do with the winnings…?",
+        "question": "Scenario 1: Heng! Ong! Huat Ah! Your family has just won the lottery of 5 million after the Toto draw has reached 10 million! So many things that you can buy and do with the money! What would you do with the winnings…?",
         "options": [
             {"option": "A) Invest in some gold! They hold long-term value and are reliable. Won’t go wrong with this!", "score": 2},
             {"option": "B) Let’s keep our money in Fixed Deposit first! Maybe we can stick with practical things like food and basic insurance and keep the money for rainy days.", "score": 1},
@@ -219,14 +219,18 @@ def show_question():
     options = [opt['option'] for opt in question['options']]
     if st.session_state.responses[index] is not None:
         current_selection = options.index(st.session_state.responses[index])
+        response = st.radio(
+            "Select an option:",
+            options,
+            index=current_selection,
+            key=str(index)
+        )
     else:
-        current_selection = -1  # No default selection
-    response = st.radio(
-        "Select an option:",
-        options,
-        index=current_selection if current_selection >= 0 else -1,
-        key=str(index)
-    )
+        response = st.radio(
+            "Select an option:",
+            options,
+            key=str(index)
+        )
 
     # Save the response
     st.session_state.responses[index] = response
@@ -239,6 +243,7 @@ def show_question():
         cols[2].button("Next", on_click=next_question)
     else:
         cols[2].button("Submit", on_click=show_results)
+
 
 def main():
     # Custom CSS for Responsive Design
