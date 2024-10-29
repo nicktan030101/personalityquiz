@@ -267,7 +267,7 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
-    st.title("🌟 Personality Quiz")
+    st.title("🌟 What type of Peek are you?")
     show_question()
 
 if __name__ == "__main__":
