@@ -263,7 +263,8 @@ def show_landing_page():
     - **Instructions**:
         - You will be presented with a series of scenarios.
         - Choose the option that best describes what you would do.
-        - At the end, you'll find out which character matches your personality!
+        - At the end, you will
+                find out which character matches your personality!
 
     **Ready to begin?**
     """)
