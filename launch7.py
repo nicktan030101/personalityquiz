@@ -126,7 +126,7 @@ character_outcomes = {
     },
     "PEEKachu": {
         "description": "You are practical and prefer familiar experiences. Safety is your top priority.",
-        "image": "/Users/nicktan/Downloads/You are story/1.png"
+        "image": "1.png"
     },
     "PEEKa Pig": {
         "description": "You enjoy a balanced life with a mix of fun and practicality.",
