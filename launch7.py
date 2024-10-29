@@ -115,42 +115,42 @@ character_outcomes = [
         "min_score": 10,
         "max_score": 19,
         "description": "You are cautious and prefer to avoid risks. You value security and stability.",
-        "image": "2.png"
+        "image": "images/2.png"
     },
     {
         "name": "PEEKachu",
         "min_score": 20,
         "max_score": 29,
         "description": "You are practical and prefer familiar experiences. Safety is your top priority.",
-        "image": "1.png"
+        "image": "images/1.png"
     },
     {
         "name": "SpongePEEK",
         "min_score": 30,
         "max_score": 39,
         "description": "You tend to go with the flow and enjoy following trends with your peers.",
-        "image": "5.png"
+        "image": "images/5.png"
     },
     {
         "name": "PEEKa Pig",
         "min_score": 40,
         "max_score": 49,
         "description": "You enjoy a balanced life with a mix of fun and practicality.",
-        "image": "3.png"
+        "image": "images/3.png"
     },
     {
         "name": "PEEKzilla",
         "min_score": 50,
         "max_score": 59,
         "description": "You are adventurous and love taking risks. Thrill and excitement drive you.",
-        "image": "4.png"
+        "image": "images/4.png"
     },
     {
         "name": "PEEK.E",
         "min_score": 60,
         "max_score": 70,
         "description": "You are informed and balanced, making decisions based on research and facts.",
-        "image": "6.png"
+        "image": "images/6.png"
     },
 ]
 
@@ -171,6 +171,12 @@ def next_question():
 
 def previous_question():
     st.session_state.question_index -= 1
+
+def submit_quiz():
+    if st.session_state.responses[st.session_state.question_index] is not None:
+        st.session_state.question_index += 1
+    else:
+        st.warning("Please select an answer before submitting.")
 
 def restart_quiz():
     st.session_state.quiz_started = False
@@ -246,11 +252,11 @@ def show_question():
     if index < len(quiz) - 1:
         cols[2].button("Next", on_click=next_question)
     else:
-        cols[2].button("Submit", on_click=show_results)
+        cols[2].button("Submit", on_click=submit_quiz)
 
 def show_landing_page():
     st.title("🌟 Welcome to the Peek Personality Quiz!")
-    st.image("Instagram Post design.png", use_column_width=True)
+    st.image("images/landing_page_image.jpg", use_column_width=True)
     st.markdown("""
     **Discover which 'Peek' character you are by answering a series of fun scenarios!**
 
