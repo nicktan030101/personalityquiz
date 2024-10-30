@@ -155,7 +155,31 @@ character_outcomes = [
 ]
 
 # Initialize Session State
+if 'quiz_started' not in st.session_state:
+    st.session_state.quiz_started = False
+
 if 'question_index' not in st.session_state:
+    st.session_state.question_index = 0
+    st.session_state.responses = [None] * len(quiz)
+    st.session_state.total_score = 0
+
+def next_question():
+    if st.session_state.responses[st.session_state.question_index] is not None:
+        st.session_state.question_index += 1
+    else:
+        st.warning("Please select an answer before proceeding.")
+
+def previous_question():
+    st.session_state.question_index -= 1
+
+def submit_quiz():
+    if st.session_state.responses[st.session_state.question_index] is not None:
+        st.session_state.question_index += 1
+    else:
+        st.warning("Please select an answer before submitting.")
+
+def restart_quiz():
+    st.session_state.quiz_started = False
     st.session_state.question_index = 0
     st.session_state.responses = [None] * len(quiz)
     st.session_state.total_score = 0
@@ -182,18 +206,13 @@ def show_results():
             character = outcome
             break
     if character:
-        st.write(f"### {character['name']}")
+        st.write(f"### You are {character['name']}!")
         st.write(character['description'])
         if character['image']:
             st.image(character['image'], use_column_width=True)
     else:
         st.write("No character matched your score.")
     st.button("Restart Quiz", on_click=restart_quiz)
-
-def restart_quiz():
-    st.session_state.question_index = 0
-    st.session_state.responses = [None] * len(quiz)
-    st.session_state.total_score = 0
 
 def show_question():
     index = st.session_state.question_index
@@ -229,45 +248,53 @@ def show_question():
     # Navigation Buttons
     cols = st.columns(3)
     if index > 0:
-        if cols[0].button("Previous"):
-            st.session_state.question_index -= 1
+        cols[0].button("Previous", on_click=previous_question)
     if index < len(quiz) - 1:
-        if cols[2].button("Next"):
-            if st.session_state.responses[index] is not None:
-                st.session_state.question_index += 1
-            else:
-                st.warning("Please select an answer before proceeding.")
+        cols[2].button("Next", on_click=next_question)
     else:
-        if cols[2].button("Submit"):
-            if st.session_state.responses[index] is not None:
-                show_results()
-            else:
-                st.warning("Please select an answer before proceeding.")
+        cols[2].button("Submit", on_click=submit_quiz)
+
+def show_landing_page():
+    st.title("🌟 Welcome to the Peek Personality Quiz!")
+    st.image("Instagram Post design.png", use_column_width=True)
+    st.markdown("""
+    **Discover which 'Peek' character you are by answering a series of fun scenarios!**
+
+    - **Instructions**:
+        - You'll be presented with a series of scenarios.
+        - Choose the option that best describes what you would do.
+        - At the end, you'll find out which character matches your personality!
+
+    **Ready to begin?**
+    """)
+    if st.button("Start Quiz"):
+        st.session_state.quiz_started = True
 
 def main():
     # Custom CSS for Responsive Design
     st.markdown("""
-        <style>
-            .main {
-                background-color: #ffffff;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-            .stButton>button {
-                color: white;
-                background-color: #4CAF50;
-                width: 100%;
-            }
-            .stProgress > div > div > div > div {
-                background-color: #4CAF50;
-            }
-        </style>
-        """, unsafe_allow_html=True)
+    <style>
+        .main {
+            background-color: #ffffff;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .stButton>button {
+            color: white;
+            background-color: #4CAF50;
+            width: 100%;
+        }
+        .stProgress > div > div > div > div {
+            background-color: #4CAF50;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
-    st.title("🌟 What type of Peek are you?")
-    if st.session_state.question_index < len(quiz):
+    if not st.session_state.quiz_started:
+        show_landing_page()
+    elif st.session_state.question_index < len(quiz):
         show_question()
     else:
         show_results()
