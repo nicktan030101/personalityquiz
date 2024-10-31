@@ -210,7 +210,10 @@ def add_social_share_buttons(share_message):
     # Social media share URLs
     twitter_url = f"https://twitter.com/intent/tweet?text={encoded_message}"
     facebook_url = f"https://www.facebook.com/sharer/sharer.php?u=https://peek.money/"
+    linkedin_url = f"https://www.linkedin.com/sharing/share-offsite/?url=https://peek.money/"
     whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_message}"
+    # Since Instagram doesn't support direct URL sharing, we'll provide a link to the Instagram profile
+    instagram_url = "https://www.instagram.com/your_instagram_profile/"
 
     # Display Buttons
     st.markdown(f"""
@@ -221,8 +224,14 @@ def add_social_share_buttons(share_message):
         <a href='{facebook_url}' target='_blank' style='margin-right: 10px;'>
             <img src='https://img.icons8.com/color/48/000000/facebook-new.png' alt='Facebook' width='48'>
         </a>
-        <a href='{whatsapp_url}' target='_blank'>
+        <a href='{linkedin_url}' target='_blank' style='margin-right: 10px;'>
+            <img src='https://img.icons8.com/color/48/000000/linkedin.png' alt='LinkedIn' width='48'>
+        </a>
+        <a href='{whatsapp_url}' target='_blank' style='margin-right: 10px;'>
             <img src='https://img.icons8.com/color/48/000000/whatsapp.png' alt='WhatsApp' width='48'>
+        </a>
+        <a href='{instagram_url}' target='_blank'>
+            <img src='https://img.icons8.com/color/48/000000/instagram-new.png' alt='Instagram' width='48'>
         </a>
     </div>
     """, unsafe_allow_html=True)
