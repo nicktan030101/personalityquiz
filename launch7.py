@@ -216,6 +216,10 @@ def show_results():
             st.image(character['image'], use_column_width=True)
     else:
         st.write("No character matched your score.")
+    # Add Call to Action
+    st.markdown("---")
+    st.markdown("**Want to explore more? Visit our [official website](https://peek.money/) for more financial tips and solutions!**")
+
     st.button("Restart Quiz", on_click=restart_quiz)
 
 def show_question():
