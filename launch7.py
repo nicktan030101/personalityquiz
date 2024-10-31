@@ -4,106 +4,110 @@ import os
 # Define the quiz data with scores
 quiz = [
     {
-        "question": "Scenario 1: Heng! Ong! Huat Ah! Your family has just won the lottery of 5 million after the Toto draw has reached 10 million! So many things that you can buy and do with the money! What would you do with the winnings…?",
+        "question": "Scenario 1: Congratulations, You've just won the $5 million lottery! What are you going to do with all that money?",
         "options": [
-            {"option": "A) Invest in some gold! They hold long-term value and are reliable. Won't go wrong with this!", "score": 2},
-            {"option": "B) Let's keep our money in Fixed Deposit first! Maybe we can stick with practical things like food and basic insurance and keep the money for rainy days.", "score": 1},
-            {"option": "C) Perhaps we can buy a mix of practical and fun items? We can get a new family car for daily use and a few luxury items to indulge in!", "score": 4},
-            {"option": "D) Let's buy some expensive clothes and gadgets. We never ever buy expensive things anyways! It's always good to indulge a little.", "score": 5},
-            {"option": "E) What is the rest of my family doing with the money? I'll see what they do and perhaps follow them!", "score": 3},
-            {"option": "F) Hmmm, let's purchase items that are valuable, but also useful. A blend of gold for investment and tech gadgets for fun sounds like a responsible choice!", "score": 6},
+            {"option": "A) Invest in some gold!", "score": 2},
+            {"option": "B) Keep your money in a fixed deposit account", "score": 1},
+            {"option": "C) Indulge a little! Buy a new family car and a few luxury goods", "score": 4},
+            {"option": "D) Indulge a lot! Buy the newest gadgets, clothes, and jewelry", "score": 5},
+            {"option": "E) Do what my friends are doing with their money", "score": 3},
+            {"option": "F) Buy some gold and some gadgets to indulge a bit", "score": 6},
         ]
     },
     {
-        "question": "Scenario 2: Let’s go to the beach-each!\nLet’s go on a short family trip to Bali! Someone in the family planned a trip for everybody to go to Bali together. What are you most excited for?",
+        "question": "Scenario 2: You've decided to use that money to go to Bali with your family! What are you most looking forward to?",
         "options": [
-            {"option": "A) A quiet, relaxing vacation where we can focus on unwinding, with some sightseeing but no big risks.", "score": 2},
-            {"option": "B) Let’s just keep it safe in a familiar environment. We need to know everything is under control so we don’t get robbed or ill on the trip.", "score": 1},
-            {"option": "C) Exciting! A balanced trip would be great. A little shopping with a little adventure with some relaxing time—maybe some snorkeling or hiking, but also a spa day.", "score": 4},
-            {"option": "D) A wild adventure! Let’s go skydiving, zip-lining, and deep-sea diving. I want to try everything!", "score": 5},
-            {"option": "E) I’ll see what the rest of the family is doing and I’ll follow suit! Should we go with a tour?", "score": 3},
-            {"option": "F) We can research safe yet exciting places to visit so we can get the best of both worlds and also get the most value for our money.", "score": 6},
+            {"option": "A) A quiet relaxing vacation with some sightseeing.", "score": 2},
+            {"option": "B) I'm not looking forward to much; going overseas is dangerous!", "score": 1},
+            {"option": "C) A little adventure but also some time to relax and unwind", "score": 4},
+            {"option": "D) All-out adventure, whatever gets the heart pumping!", "score": 5},
+            {"option": "E) Whatever my family wants to do", "score": 3},
+            {"option": "F) I'd need to do some research first—something fun and relaxing but not too expensive", "score": 6},
         ]
     },
     {
-        "question": "Scenario 3: Let’s pack our luggage\nAbout to embark on a much-anticipated vacation, it’s time to pack! Everyone has different priorities—what do you pack in your luggage?",
+        "question": "Scenario 3: Time to pack! What are you packing?",
         "options": [
-            {"option": "A) Pack essentials first—clothes, toiletries, and anything that will keep us comfortable and prepared. I might add a few extra things, but only if they’re practical.", "score": 2},
-            {"option": "B) A few outfits, toiletries, and some snacks will do. Most importantly, medication! What if we get Bali Belly?", "score": 1},
-            {"option": "C) Pack a balance: essentials like clothes and toiletries, but also a few fun items like a camera or some sports gear for activities.", "score": 4},
-            {"option": "D) Definitely nice clothing and accessories, I want to look good for the trip! My new digital camera too so I can capture the sights there!", "score": 5},
-            {"option": "F) I’ll research the weather, the activities we’ll do, and pack accordingly—ensuring I have everything I need, but nothing unnecessary. Efficiency is key.", "score": 6},
+            {"option": "A) Essentials first, then a few practical non-essentials if there's still room", "score": 2},
+            {"option": "B) All the essentials, especially MEDICINE—what if we get Bali belly?", "score": 1},
+            {"option": "C) Essentials and some fun items like a camera and sports gear", "score": 4},
+            {"option": "D) All of my nicest clothes, jewelry, and new camera!", "score": 5},
+            {"option": "E) Whatever else everyone else is packing", "score": 3},
+            {"option": "F) I'll need to research the location and make my decisions based on that so I don't bring anything unnecessary", "score": 6},
         ]
     },
     {
-        "question": "Scenario 4: You finally boarded the plane! Which seat will you go for in the side aisle?",
+        "question": "Scenario 4: We've managed to get free seat selection! What seat are you picking?",
         "options": [
-            {"option": "A) Window Seat: I want to see the flight take off and sit by the window!\nYou prefer the view and a bit of isolation to enjoy the flight in peace.", "score": 4},
-            {"option": "B) Aisle Seat: I don’t want to squeeze past multiple people just to go to the toilet…\nYou like easy access to move around when needed, even if it means less comfort, more into lower risks.", "score": 2},
-            {"option": "C) Middle Seat: Neither here nor there but at least I get both the convenience of going to the toilet and also the view of the sky! And at least I’m surrounded by my friends on both sides!", "score": 3},
+            {"option": "A) Window Seat", "score": 4},
+            {"option": "B) Aisle Seat", "score": 2},
+            {"option": "C) Middle Seat", "score": 3},
         ]
     },
     {
-        "question": "Scenario 5: Coffee, Tea, or Me?\nYou're comfortably seated on the plane to Bali, and the flight attendant comes by to take your meal order. You have a few options to choose from—what’s your choice?",
+        "question": "Scenario 5: We're on the plane! The flight attendant asks for your meal order; what do you pick?",
         "options": [
-            {"option": "A) Choose the standard meal option: chicken and rice. It’s reliable, familiar, and I know I’ll like it.", "score": 2},
-            {"option": "B) OOOO tom yum or laksa? Got to stimulate the taste buds before touching down in a new city!", "score": 5},
-            {"option": "C) Let’s see what the rest orders first and maybe we can share the different meals with each other!", "score": 3},
-            {"option": "D) Hmmm let’s get something with fruits, vegetables and meat in it. I’ll maybe go for something nutritious and practical since we don’t know what food choices we have available when we touch down.", "score": 6},
+            {"option": "A) Chicken and rice, something familiar that can't go wrong!", "score": 2},
+            {"option": "B) Chicken porridge—let's not risk upsetting our stomach before the holiday.", "score": 1},
+            {"option": "C) Tom yum or laksa—let's spice things up and get something good before the holiday starts for real!", "score": 4},
+            {"option": "D) Is there champagne? It's time to party!", "score": 5},
+            {"option": "E) I'll get whatever the rest get.", "score": 3},
+            {"option": "F) I heard nasi goreng is a local Balinese dish that isn't too harsh on the stomach; let's get that!", "score": 6},
         ]
     },
     {
-        "question": "Scenario 6: Money, Money, Money\nYou have finally touched down onto Bali! You already have some exchange currency but is Lady Luck on your side, because the exchange rate is now to your favour? What do you do?",
+        "question": "Scenario 6: You have finally touched down in Bali! You already have some exchanged currency, but Lady Luck is on your side because the exchange rate is now in your favor. What do you do?",
         "options": [
-            {"option": "A) Exchange a small, fixed amount—better safe than sorry in case the rate changes again.", "score": 2},
-            {"option": "B) I’ll wait until I really need to exchange money, just in case. I don’t want to take risks!", "score": 1},
-            {"option": "C) Exchange some, but also leave some for later exchanges if the rate changes again.", "score": 4},
-            {"option": "D) That’s such a good deal! We’ll definitely spend the money anyways, let’s exchange a larger amount now so we can take advantage of the rate!", "score": 5},
-            {"option": "E) Check what everyone else is doing first—if they’re exchanging, I’ll go along with it.", "score": 3},
-            {"option": "F) There may be more exchangers near our resort! We can research along the way about the best times and locations to exchange currency, so we can get both value and convenience.", "score": 6},
+            {"option": "A) Exchange about half of the cash and leave the other half in case the rate gets better", "score": 2},
+            {"option": "B) Exchange all our money; it's such a good deal, and what if there's an emergency situation? We need it!", "score": 1},
+            {"option": "C) Exchange a small amount first—who knows if the rate is gonna get better", "score": 4},
+            {"option": "D) I won't convert any money; let's hope the rate gets even better!", "score": 5},
+            {"option": "E) I'll do what everyone else does", "score": 3},
+            {"option": "F) Let's search if there are more exchanges near our resort first and see if there are any with better rates!", "score": 6},
         ]
     },
     {
-        "question": "Scenario 7: The Unexpected Visitor\nNow you’re all set to your trip, you finally are on your sweet ride to PEEK resort! However, out of nowhere, there is suddenly an unexpected visitor - a cheeky monkey - which jumps on your car! What should you do now?",
+        "question": "Scenario 7: We've reached the resort, finally! A monkey suddenly appears on the balcony outside of one of the rooms; what are you doing?",
         "options": [
-            {"option": "A) Stay calm, keep the windows up, and observe from a safe distance. We don’t want any surprises.", "score": 2},
-            {"option": "B) Quick! Close everything and make sure we’re safe. Who knows what this monkey might do?!", "score": 1},
-            {"option": "C) Snap a few photos and let the monkey hang around for a bit—what a fun surprise!", "score": 4},
-            {"option": "D) Ooooooh I got this Gado Gado from near the airport. Should we open the windows and give it a snack? It’s not everyday you get this close to a wild monkey!", "score": 5},
-            {"option": "E) The monkey isn’t leaving the car! What should I do? Maybe the locals here have advice, let me call the staff at the resort and check what’s best to do in this situation.", "score": 6},
+            {"option": "A) Stay calm, close the door to the balcony, and keep an eye on it.", "score": 2},
+            {"option": "B) EMERGENCY! Close all the doors, call for a family meeting on how to deal with the monkey—what if it's venomous?!", "score": 1},
+            {"option": "C) Snap some photos and just let it do its thing.", "score": 4},
+            {"option": "D) Let's have some fun and feed it some food!", "score": 5},
+            {"option": "E) Go with the flow and see what everyone else does.", "score": 3},
+            {"option": "F) Maybe the locals have advice; let me call the staff at the resort and check what's best to do in this situation.", "score": 6},
         ]
     },
     {
-        "question": "Scenario 8: Let’s go on an adventure!\nOutside PEEK resort, a local tour guide intercepts you and offers you an Alpaca Farm package which is lower than the market rate! Should we go?",
+        "question": "Scenario 8: It's time to go out! On the way out of the resort, a tour guide approaches you and offers you an Alpaca farm package he says is below market-rate! Shall we?",
         "options": [
-            {"option": "A) Wow it’s a steal but are there cheaper options out there?", "score": 2},
-            {"option": "B) Hmm, I’m worried there’s a hidden cost. I’ll double-check with the guide to make sure we don’t overspend.", "score": 1},
-            {"option": "C) Fantastic! A little adventure won’t hurt—I’ll enjoy it but I’ll stay mindful of what’s not included in the package.", "score": 4},
-            {"option": "D) Definitely yes! It’s outside of PEEK resort so it should be reliable! Also I’ve heard of this travel agency before so it should be fine.", "score": 5},
-            {"option": "E) What does the rest think? I don’t mind going for it, sounds fun! But if they aren’t interested I’m fine doing other activities as well.", "score": 3},
-            {"option": "F) Hmmm, I’ll take the tour guide’s contact and take some time to research the package more to have a worth it memorable experience without any hidden charges!", "score": 6},
+            {"option": "A) What a good deal! I wonder if there are better deals out there though...", "score": 2},
+            {"option": "B) Let's not go; I'm not going to trust a stranger!", "score": 1},
+            {"option": "C) Amazing! Let's go, but be careful not to fall for any hidden costs.", "score": 4},
+            {"option": "D) LET'S GO!!! He looks like a tour guide, so this must be legit.", "score": 5},
+            {"option": "E) Let's see what the rest think.", "score": 3},
+            {"option": "F) Let's get his contact and get back to him. In the meantime, do some research online before making a decision.", "score": 6},
         ]
     },
     {
-        "question": "Scenario 9: There’s nothing like retail therapy\nSoon, it’s going to be your last day in Bali, and you’re on the hunt for souvenirs to bring back for your friends and family. The local market is bustling, and there are so many choices! What catches your eye?",
+        "question": "Scenario 9: It's the last day of what's been an awesome holiday, and we're out souvenir hunting for friends at the local market. What are you getting?",
         "options": [
-            {"option": "A) Let’s just mass buy these elephant pants or keychains so all my friends can get something each without having the need to compare!", "score": 2},
-            {"option": "B) I think I’ll skip souvenirs and save my money. They’re nice to have, but not necessary, and I’d rather be safe than overspend.", "score": 1},
-            {"option": "C) A mix of practical and fun items: maybe some handmade jewelry, a small bottle of Balinese spices, and a keychain for each friend. Something for everyone!", "score": 4},
-            {"option": "D) Let’s go big! Let’s get rare items like elephant tusks, scarves, figurines, exotic coffee, and anything eye-catching that expresses that it’s from Bali.", "score": 5},
-            {"option": "E) Maybe I’ll see what the locals or my family recommend, especially if there’s a popular item everyone’s buying. I want the trendiest souvenirs to give my friends!", "score": 3},
-            {"option": "F) I’ll look for classic Balinese handicrafts—like wood carvings or batik cloth. Timeless, traditional, and meaningful and these will be high-quality keepsakes for my friends!", "score": 6},
+            {"option": "A) Mass buy some elephant pants or keychains so that everyone gets the same thing.", "score": 2},
+            {"option": "B) Nothing; I need to be smart with my money.", "score": 1},
+            {"option": "C) A mix of practical and fun items—maybe some handmade jewelry and keychains.", "score": 4},
+            {"option": "D) Let's splurge! Exotic spices and expensive unique jewelry.", "score": 5},
+            {"option": "E) Whatever everyone else gets or whatever is the most popular souvenir.", "score": 3},
+            {"option": "F) Find out what the most unique and thoughtful yet practical thing Bali has to offer and get it!", "score": 6},
         ]
     },
     {
-        "question": "Scenario 10: Was it all a dream?\nAnd we're back again. After a busy trip, you deserve some rest! How do you prefer to unwind after that exciting trip to Bali?",
+        "question": "Scenario 10: Aaaaand we're back to reality; the holiday is over. What are you doing now that you're back home?",
         "options": [
-            {"option": "A) Curling up with a good book or an engaging movie sounds like the perfect way to recharge.", "score": 2},
-            {"option": "B) Let’s not spend too much… I’ve already spent so much on the trip! Relaxing at home is just fine for me.", "score": 1},
-            {"option": "C) A nice dinner out or a quiet day at the park is a good balance of fun and relaxation.", "score": 4},
-            {"option": "D) Spa day or concert tickets—something indulgent and thrilling to end things on a high note!", "score": 5},
-            {"option": "E) I’ll ask my friends or family what they’re planning and go with the flow—spending time together is the most relaxing part.", "score": 3},
-            {"option": "F) I’ll choose a budget-friendly but enjoyable activity to recharge mindfully, maybe a nature walk or DIY spa night.", "score": 6},
+            {"option": "A) A simple dinner with my friends to catch up.", "score": 2},
+            {"option": "B) Relax at home... I need to save money after that holiday.", "score": 1},
+            {"option": "C) A nice dinner out with my friends to catch up.", "score": 4},
+            {"option": "D) Go for a spa day or buy the latest concert tickets; let's end off the week with a final bang.", "score": 5},
+            {"option": "E) I'll ask my friends and family what they're up to and follow suit.", "score": 3},
+            {"option": "F) Choose a budget-friendly yet enjoyable way to unwind and relax—perhaps a DIY spa day?", "score": 6},
         ]
     },
 ]
