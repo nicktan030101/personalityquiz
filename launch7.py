@@ -214,8 +214,11 @@ def show_results():
         st.write(character['description'])
         if character['image']:
             st.image(character['image'], use_column_width=True)
+     # Create a shareable message
+        share_message = f"I just took the Peek Personality Quiz and I'm {character['name']}! 🎉 Find out which character you are at https://www.peekpersonalityquiz.com."
     else:
         st.write("No character matched your score.")
+        share_message = "I just took the Peek Personality Quiz! Try it yourself at [Peek Quiz](https://personalityquiz-svq5pueb2kbwew8jqbr48y.streamlit.app/)."
     # Add Call to Action
     st.markdown("---")
     st.markdown("**Want to explore more? Visit our [official website](https://peek.money/) for more financial tips and solutions!**")
