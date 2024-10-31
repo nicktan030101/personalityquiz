@@ -203,13 +203,13 @@ def calculate_score():
 def add_social_share_buttons(share_message):
     st.markdown("---")
     st.markdown("### Share your results:")
-    
+
     # Encode the share message for URLs
     encoded_message = urllib.parse.quote(share_message)
 
     # Social media share URLs
     twitter_url = f"https://twitter.com/intent/tweet?text={encoded_message}"
-    facebook_url = f"https://www.facebook.com/sharer/sharer.php?u=https://www.peekpersonalityquiz.com"
+    facebook_url = f"https://www.facebook.com/sharer/sharer.php?u=https://peek.money/"
     whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_message}"
 
     # Display Buttons
@@ -242,14 +242,18 @@ def show_results():
         st.write(character['description'])
         if character['image']:
             st.image(character['image'], use_column_width=True)
-     # Create a shareable message
-        share_message = f"I just took the Peek Personality Quiz and I'm {character['name']}! 🎉 Find out which character you are at https://www.peekpersonalityquiz.com."
+        # Create a shareable message
+        share_message = f"I just took the Peek Personality Quiz and I'm {character['name']}! 🎉 Find out which character you are at https://peek.money/"
     else:
         st.write("No character matched your score.")
-        share_message = "I just took the Peek Personality Quiz! Try it yourself at [Peek Quiz](https://personalityquiz-svq5pueb2kbwew8jqbr48y.streamlit.app/)."
+        share_message = "I just took the Peek Personality Quiz! Try it yourself at https://peek.money/."
+
     # Add Call to Action
     st.markdown("---")
     st.markdown("**Want to explore more? Visit our [official website](https://peek.money/) for more financial tips and solutions!**")
+
+    # Add Social Media Share Buttons
+    add_social_share_buttons(share_message)
 
     st.button("Restart Quiz", on_click=restart_quiz)
 
