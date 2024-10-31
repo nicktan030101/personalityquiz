@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import urllib.parse  # For URL encoding
 
 # Define the quiz data with scores
 quiz = [
