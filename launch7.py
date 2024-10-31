@@ -199,6 +199,33 @@ def calculate_score():
                     break
     st.session_state.total_score = total_score
 
+def add_social_share_buttons(share_message):
+    st.markdown("---")
+    st.markdown("### Share your results:")
+    
+    # Encode the share message for URLs
+    encoded_message = urllib.parse.quote(share_message)
+
+    # Social media share URLs
+    twitter_url = f"https://twitter.com/intent/tweet?text={encoded_message}"
+    facebook_url = f"https://www.facebook.com/sharer/sharer.php?u=https://www.peekpersonalityquiz.com"
+    whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_message}"
+
+    # Display Buttons
+    st.markdown(f"""
+    <div style='text-align: center;'>
+        <a href='{twitter_url}' target='_blank' style='margin-right: 10px;'>
+            <img src='https://img.icons8.com/color/48/000000/twitter--v1.png' alt='Twitter' width='48'>
+        </a>
+        <a href='{facebook_url}' target='_blank' style='margin-right: 10px;'>
+            <img src='https://img.icons8.com/color/48/000000/facebook-new.png' alt='Facebook' width='48'>
+        </a>
+        <a href='{whatsapp_url}' target='_blank'>
+            <img src='https://img.icons8.com/color/48/000000/whatsapp.png' alt='WhatsApp' width='48'>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
 def show_results():
     calculate_score()
     st.markdown("## Your Results")
