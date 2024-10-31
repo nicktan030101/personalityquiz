@@ -13,7 +13,8 @@ quiz = [
             {"option": "D) Indulge a lot! Buy the newest gadgets, clothes, and jewelry", "score": 5},
             {"option": "E) Do what my friends are doing with their money", "score": 3},
             {"option": "F) Buy some gold and some gadgets to indulge a bit", "score": 6},
-        ]
+        ],
+        "image": "lottery.webp"
     },
     {
         "question": "Scenario 2: You've decided to use that money to go to Bali with your family! What are you most looking forward to?",
@@ -24,7 +25,8 @@ quiz = [
             {"option": "D) All-out adventure, whatever gets the heart pumping!", "score": 5},
             {"option": "E) Whatever my family wants to do", "score": 3},
             {"option": "F) I'd need to do some research first—something fun and relaxing but not too expensive", "score": 6},
-        ]
+        ],
+        "image": "bali.webp"
     },
     {
         "question": "Scenario 3: Time to pack! What are you packing?",
@@ -35,7 +37,8 @@ quiz = [
             {"option": "D) All of my nicest clothes, jewelry, and new camera!", "score": 5},
             {"option": "E) Whatever else everyone else is packing", "score": 3},
             {"option": "F) I'll need to research the location and make my decisions based on that so I don't bring anything unnecessary", "score": 6},
-        ]
+        ],
+        "image": "packing.webp"
     },
     {
         "question": "Scenario 4: We've managed to get free seat selection! What seat are you picking?",
@@ -43,7 +46,8 @@ quiz = [
             {"option": "A) Window Seat", "score": 4},
             {"option": "B) Aisle Seat", "score": 2},
             {"option": "C) Middle Seat", "score": 3},
-        ]
+        ],
+        "image": "Plane seats image.jpeg"
     },
     {
         "question": "Scenario 5: We're on the plane! The flight attendant asks for your meal order; what do you pick?",
@@ -54,7 +58,8 @@ quiz = [
             {"option": "D) Is there champagne? It's time to party!", "score": 5},
             {"option": "E) I'll get whatever the rest get.", "score": 3},
             {"option": "F) I heard nasi goreng is a local Balinese dish that isn't too harsh on the stomach; let's get that!", "score": 6},
-        ]
+        ],
+        "image": "Plane food best flight foods.jpg"
     },
     {
         "question": "Scenario 6: You have finally touched down in Bali! You already have some exchanged currency, but Lady Luck is on your side because the exchange rate is now in your favor. What do you do?",
@@ -65,7 +70,8 @@ quiz = [
             {"option": "D) I won't convert any money; let's hope the rate gets even better!", "score": 5},
             {"option": "E) I'll do what everyone else does", "score": 3},
             {"option": "F) Let's search if there are more exchanges near our resort first and see if there are any with better rates!", "score": 6},
-        ]
+        ],
+        "image": "exchangeRates.jpeg"
     },
     {
         "question": "Scenario 7: We've reached the resort, finally! A monkey suddenly appears on the balcony outside of one of the rooms; what are you doing?",
@@ -76,7 +82,8 @@ quiz = [
             {"option": "D) Let's have some fun and feed it some food!", "score": 5},
             {"option": "E) Go with the flow and see what everyone else does.", "score": 3},
             {"option": "F) Maybe the locals have advice; let me call the staff at the resort and check what's best to do in this situation.", "score": 6},
-        ]
+        ],
+        "image": "Monkey in the city.avif"
     },
     {
         "question": "Scenario 8: It's time to go out! On the way out of the resort, a tour guide approaches you and offers you an Alpaca farm package he says is below market-rate! Shall we?",
@@ -87,7 +94,8 @@ quiz = [
             {"option": "D) LET'S GO!!! He looks like a tour guide, so this must be legit.", "score": 5},
             {"option": "E) Let's see what the rest think.", "score": 3},
             {"option": "F) Let's get his contact and get back to him. In the meantime, do some research online before making a decision.", "score": 6},
-        ]
+        ],
+        "image": "alpaca.jpg"
     },
     {
         "question": "Scenario 9: It's the last day of what's been an awesome holiday, and we're out souvenir hunting for friends at the local market. What are you getting?",
@@ -98,7 +106,8 @@ quiz = [
             {"option": "D) Let's splurge! Exotic spices and expensive unique jewelry.", "score": 5},
             {"option": "E) Whatever everyone else gets or whatever is the most popular souvenir.", "score": 3},
             {"option": "F) Find out what the most unique and thoughtful yet practical thing Bali has to offer and get it!", "score": 6},
-        ]
+        ],
+        "image": "souvenir.jpg"
     },
     {
         "question": "Scenario 10: Aaaaand we're back to reality; the holiday is over. What are you doing now that you're back home?",
@@ -109,7 +118,8 @@ quiz = [
             {"option": "D) Go for a spa day or buy the latest concert tickets; let's end off the week with a final bang.", "score": 5},
             {"option": "E) I'll ask my friends and family what they're up to and follow suit.", "score": 3},
             {"option": "F) Choose a budget-friendly yet enjoyable way to unwind and relax—perhaps a DIY spa day?", "score": 6},
-        ]
+        ],
+        "image": "arrival.jpeg"
     },
 ]
 
@@ -277,6 +287,9 @@ def show_question():
 
     # Display Question
     st.markdown(f"### {question['question']}")
+
+    # Display Image
+    st.image(question['image'], use_column_width=True)
 
     # Display Options
     options = [opt['option'] for opt in question['options']]
