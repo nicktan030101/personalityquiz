@@ -47,7 +47,7 @@ quiz = [
             {"option": "B) Aisle Seat", "score": 2},
             {"option": "C) Middle Seat", "score": 3},
         ],
-        "image": "Plane seats image.jpeg"
+        "image": "Plane seats premium photo.jpeg"
     },
     {
         "question": "Scenario 5: We're on the plane! The flight attendant asks for your meal order; what do you pick?",
