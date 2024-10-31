@@ -83,7 +83,7 @@ quiz = [
             {"option": "E) Go with the flow and see what everyone else does.", "score": 3},
             {"option": "F) Maybe the locals have advice; let me call the staff at the resort and check what's best to do in this situation.", "score": 6},
         ],
-        "image": "Monkey in the city.avif"
+        "image": "monkey.jpg"
     },
     {
         "question": "Scenario 8: It's time to go out! On the way out of the resort, a tour guide approaches you and offers you an Alpaca farm package he says is below market-rate! Shall we?",
