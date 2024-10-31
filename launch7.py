@@ -264,7 +264,7 @@ def show_results():
     # Add Social Media Share Buttons
     add_social_share_buttons(share_message)
 
-    st.markdown("<br><br>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
     st.button("Restart Quiz", on_click=restart_quiz)
 
 def show_question():
