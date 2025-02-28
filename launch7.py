@@ -260,7 +260,7 @@ def show_results():
         st.write(f"### You are {character['name']}!")
         st.write(character['description'])
         if character['image']:
-            st.image(character['image'], use_column_width=True)
+            st.image(character['image'], use_container_width=True)
         # Create a shareable message
         share_message = f"I just took the Peek Personality Quiz and I'm {character['name']}! 🎉 Find out which character you are at https://peek.money/"
     else:
@@ -289,7 +289,7 @@ def show_question():
     st.markdown(f"### {question['question']}")
 
     # Display Image
-    st.image(question['image'], use_column_width=True)
+    st.image(question['image'], use_container_width=True)
 
     # Display Options
     options = [opt['option'] for opt in question['options']]
@@ -322,7 +322,7 @@ def show_question():
 
 def show_landing_page():
     st.title("🌟 Welcome to the Peek Personality Quiz!")
-    st.image("Instagram Post design.png", use_column_width=True)
+    st.image("Instagram Post design.png", use_container_width=True)
     st.markdown("""
     **Discover which 'Peek' character you are by answering a series of fun scenarios!**
 
